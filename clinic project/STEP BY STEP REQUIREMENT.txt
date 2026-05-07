@@ -1,0 +1,72 @@
+========================================
+NPC SMART CANTEEN - SETUP GUIDE
+========================================
+
+This guide explains how to run the NPC Smart Canteen system on a new computer.
+
+⚠️ IMPORTANT: What to copy to your flash drive
+When transferring your project to a new laptop, DO NOT copy the "node_modules" folder. It is massive and can cause errors when moving between different computers. 
+
+Only bring these files inside your main folder (e.g., "npc-canteen"):
+- server.js
+- package.json
+- /public (folder containing your HTML files)
+
+----------------------------------------
+Step 1: Install Node.js (The Engine)
+----------------------------------------
+The new laptop needs Node.js to run the backend server.
+1. Open a web browser and go to: https://nodejs.org/
+2. Download and install the LTS (Long Term Support) version.
+3. Keep clicking "Next" during the installation and leave all default settings as they are.
+
+----------------------------------------
+Step 2: Install VS Code (The Editor)
+----------------------------------------
+If the laptop doesn't have a code editor:
+1. Go to: https://code.visualstudio.com/
+2. Download and install VS Code.
+
+----------------------------------------
+Step 3: Open Your Project
+----------------------------------------
+1. Copy your "npc-canteen" folder from your flash drive/Google Drive to the new laptop's Desktop or Documents folder.
+2. Open VS Code.
+3. Click File > Open Folder... and select your "npc-canteen" folder.
+
+----------------------------------------
+Step 4: Install the Required Packages
+----------------------------------------
+Since you didn't bring the "node_modules" folder, you need to tell the new laptop to download the necessary background files.
+1. In VS Code, click Terminal > New Terminal at the top menu.
+2. Inside the terminal at the bottom of your screen, type this exact command and press Enter:
+
+   npm install express express-session better-sqlite3 google-auth-library
+
+3. Wait a minute or two for the installation to finish. You will see a new "node_modules" folder automatically appear on the left side.
+
+----------------------------------------
+Step 5: Start the Server
+----------------------------------------
+1. In that same terminal, type this command and press Enter to start the system:
+
+   node server.js
+
+2. If it is working, you will see a message saying:
+   ✅ NPC Smart Canteen running at http://localhost:3000
+
+----------------------------------------
+Step 6: Access the Website
+----------------------------------------
+1. Open Google Chrome (or any web browser).
+2. In the address bar at the top, type: http://localhost:3000
+3. The login screen will appear! 
+
+----------------------------------------
+Troubleshooting & Tips
+----------------------------------------
+* Database Reset: If you want to start with a completely blank slate (no orders, no menu items, fresh admin account), simply delete the "canteen.db" file in your VS Code file explorer. The next time you run "node server.js", the system will automatically create a fresh, clean database.
+
+* "Port 3000 is already in use" Error: This means another program on the laptop is using that port. Open "server.js", scroll to the top, change "const PORT = 3000;" to "const PORT = 8080;", save the file, and run the server again.
+
+* White Screen / 404 Error: Make sure your HTML files are strictly inside a folder named "public" (all lowercase), and that your terminal is opened in the main "npc-canteen" folder, not inside "public".
