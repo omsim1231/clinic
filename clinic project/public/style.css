@@ -1,0 +1,62 @@
+/* ===================== RESPONSIVE DESIGN ===================== */
+@media (max-width: 900px) {
+    /* Stack the Student Order Panel */
+    .order-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Make the Cart stop sticking and flow normally on mobile */
+    .cart-card {
+        position: relative;
+        top: 0;
+        margin-top: 20px;
+    }
+
+    /* Stack the Admin Panel */
+    .admin-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* Adjust Kitchen Tickets for smaller screens */
+    .kitchen-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Adjust History Table */
+    .history-table th, .history-table td {
+        padding: 10px 8px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 30px 20px;
+        width: 100%;
+        border-radius: 16px;
+    }
+    .topnav {
+        padding: 0 15px;
+    }
+    .nav-brand {
+        font-size: 15px;
+    }
+}
+
+/* Paste ALL your original CSS above this line, then add: */
+
+/* ===================== RESPONSIVE DESIGN ===================== */
+@media (max-width: 900px) {
+    .order-layout, .admin-layout { grid-template-columns: 1fr; }
+    .cart-card { position: relative; top: 0; margin-top: 20px; }
+    .kitchen-grid { grid-template-columns: 1fr; }
+    .history-table th, .history-table td { padding: 10px 8px; font-size: 11px; }
+    .stats-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .login-card { padding: 30px 20px; width: 100%; border-radius: 16px; border: none; }
+    .topnav { padding: 0 15px; }
+    .nav-brand { font-size: 15px; }
+    .menu-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+}
